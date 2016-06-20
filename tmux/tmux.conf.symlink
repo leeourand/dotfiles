@@ -12,6 +12,7 @@ set -g status-bg colour235
 set -g status-fg white
 set -g status-left ""
 set -g status-right "#[fg=white]#(date)"
+set -g status-utf8 on
 
 # Vim-ify
 set-window-option -g mode-keys vi
