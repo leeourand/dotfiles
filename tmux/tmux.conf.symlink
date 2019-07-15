@@ -1,5 +1,5 @@
 set-option -g default-command "reattach-to-user-namespace -l zsh"
-set-option -g prefix C-a
+set-option -g prefix C-j
 set-option -g renumber-windows on
 bind-key C-a last-window
 bind-key a send-prefix
@@ -12,7 +12,6 @@ set -g status-bg colour235
 set -g status-fg white
 set -g status-left ""
 set -g status-right "#[fg=white]#(date)"
-set -g status-utf8 on
 
 # Vim-ify
 set-window-option -g mode-keys vi
