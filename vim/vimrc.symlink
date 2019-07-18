@@ -1,5 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+filetype indent on
 
 set noswapfile
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -23,21 +24,33 @@ set ignorecase
 set smartcase
 set smartindent
 set autoindent
-filetype indent on
 nnoremap <leader>f :CtrlP<CR>
 map \ :NERDTreeToggle<CR>
+map <leader>/ <Plug>NERDCommenterToggle('n', 'Toggle')<Cr>
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'mileszs/ack.vim'
-Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'twerth/ir_black'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'git://git.wincent.com/command-t.git'
 call vundle#end()
 
-
 let g:ackprg = 'ag --vimgrep --smart-case'
+let g:ctrlp_user_command = {
+      \ 'types': {
+        \ 1: ['.git', 'cd %s && git ls-files'],
+        \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+      \ },
+      \ 'fallback': 'find %s -type f'
+ \ }
+
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:NERDSpaceDelims = 1
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
