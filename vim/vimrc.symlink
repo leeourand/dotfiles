@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set noswapfile
 set rtp+=~/.vim/bundle/Vundle.vim
 set number
 set ruler
@@ -25,14 +26,22 @@ set autoindent
 filetype indent on
 nnoremap <leader>f :CtrlP<CR>
 map \ :NERDTreeToggle<CR>
-
-	
-	
-
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree.git'
+Plugin 'mileszs/ack.vim'
 Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'twerth/ir_black'
 call vundle#end()
+
+
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+nmap \| :NERDTreeFind<CR>
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+colorscheme ir_black
