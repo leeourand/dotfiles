@@ -32,3 +32,4 @@ alias amend="git commit --amend"
 
 git config --global alias.co checkout
 git config --global alias.st status
+git config --global alias.please push --force-with-lease
