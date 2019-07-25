@@ -24,3 +24,5 @@ for config_file ($ZSH/**/completion.sh) source $config_file
 
 eval "$(rbenv init -)"
 bindkey -e
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
