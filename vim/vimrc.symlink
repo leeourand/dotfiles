@@ -36,18 +36,27 @@ Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-endwise'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/fzf.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'dense-analysis/ale'
 call vundle#end()
 
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:NERDSpaceDelims = 1
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
+let g:ale_python_auto_pipenv = 1
+let g:ale_echo_msg_format='%severity% <%linter%> %code: %%s'
+let g:ale_echo_msg_error_str='[ERROR]'
+let g:ale_echo_msg_info_str='[INFO]'
+let g:ale_echo_msg_warning_str='[WARN]'
+
+cnoreabbrev ag Ag
+cnoreabbrev aG Ag
+cnoreabbrev Ag Ag
 nmap \| :NERDTreeFind<CR>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
