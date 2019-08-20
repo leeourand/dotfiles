@@ -1,8 +1,13 @@
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 set-option -g prefix C-j
 set-option -g renumber-windows on
+bind c new-window   -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
 bind-key C-a last-window
 bind-key a send-prefix
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 set -g base-index 1
 set -s escape-time 0
 set -g default-terminal "screen-256color" 
