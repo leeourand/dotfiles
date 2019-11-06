@@ -50,6 +50,8 @@ Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'sbdchd/neoformat'
 call vundle#end()
 
+autocmd BufWritePre * %s/\s\+$//e
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 let g:ackprg = 'ag --vimgrep --smart-case'
