@@ -1,64 +1,59 @@
-set nocompatible              " be iMproved, required
 filetype off                  " required
 filetype indent on
 
-set noswapfile
-set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=/usr/local/opt/fzf
-set number
-set ruler
 syntax on
 let mapleader = ","
 
-" Set encoding
+set autoindent
+set autowriteall
 set encoding=utf-8
-
-" Whitespace stuff
-set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
 set expandtab
 set hlsearch
-set incsearch
 set ignorecase
+set incsearch
+set nocompatible
+set noswapfile
+set nowrap
+set number
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.vim/bundle/Vundle.vim
+set ruler
+set shiftwidth=2
 set smartcase
 set smartindent
-set autoindent
+set softtabstop=2
+set tabstop=2
+
 nnoremap <leader>f :FZF<CR>
-nnoremap <space> :noh<CR><CR>
+nnoremap <silent> <space> :noh<CR>
+noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
-map <leader>/ <Plug>NERDCommenterToggle('n', 'Toggle')<Cr>
+map <leader>/ <Plug>NERDCommenterToggle('n', 'Toggle')
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/fzf.vim'
 Plugin 'Yggdroot/indentLine'
-Plugin 'dense-analysis/ale'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'sbdchd/neoformat'
 call vundle#end()
 
-let g:ackprg = 'ag --vimgrep --smart-case'
-let g:NERDSpaceDelims = 1
-let g:ale_python_auto_pipenv = 1
-let g:ale_echo_msg_format='%severity% <%linter%> %code: %%s'
-let g:ale_echo_msg_error_str='[ERROR]'
-let g:ale_echo_msg_info_str='[INFO]'
-let g:ale_echo_msg_warning_str='[WARN]'
-
-cnoreabbrev ag Ag
-cnoreabbrev aG Ag
-cnoreabbrev Ag Ag
-nmap \| :NERDTreeFind<CR>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+let g:ackprg = 'ag --vimgrep --smart-case'
+let g:NERDSpaceDelims = 1
+nmap \| :NERDTreeFind<CR>
 colorscheme Tomorrow-Night
 au FileType gitcommit setlocal tw=72
