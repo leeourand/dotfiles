@@ -4,3 +4,7 @@
 *~
 *.swp
 *.rbc
+/bin/rake
+/bin/rails
+/bin/rspec
+/bin/spring

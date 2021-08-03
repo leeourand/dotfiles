@@ -10,13 +10,15 @@ bind-key -T copy-mode-vi 'v' send -X begin-selection
 bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
 set -g base-index 1
 set -s escape-time 0
-set -g default-terminal "screen-256color" 
+set -g default-terminal "screen-256color"
 
 # Status Bar
-set -g status-bg colour235
-set -g status-fg white
+set -g pane-active-border-style bg=default,fg=colour12
+set -g pane-border-style fg=colour239
+set -g status-bg colour12
+set -g status-fg colour233
 set -g status-left ""
-set -g status-right "#[fg=white]#(date)"
+set -g status-right "#(date)"
 
 # Vim-ify
 set-window-option -g mode-keys vi

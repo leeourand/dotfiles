@@ -30,24 +30,28 @@ noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
 map <leader>/ <Plug>NERDCommenterToggle('n', 'Toggle')
 call vundle#begin()
+Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-dispatch'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'Yggdroot/indentLine'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'junegunn/fzf.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'mileszs/ack.vim'
 Plugin 'sbdchd/neoformat'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 autocmd BufWritePre * %s/\s\+$//e
@@ -56,6 +60,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:NERDSpaceDelims = 1
+let g:dracula_italic = 0
 nmap \| :NERDTreeFind<CR>
-colorscheme Tomorrow-Night
+colorscheme dracula
 au FileType gitcommit setlocal tw=72
