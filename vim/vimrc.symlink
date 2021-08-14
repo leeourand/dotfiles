@@ -16,7 +16,6 @@ set noswapfile
 set nowrap
 set number
 set rtp+=/usr/local/opt/fzf
-set rtp+=~/.vim/bundle/Vundle.vim
 set ruler
 set shiftwidth=2
 set smartcase
@@ -29,30 +28,30 @@ nnoremap <silent> <space> :noh<CR>
 noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
 map <leader>/ <Plug>NERDCommenterToggle('n', 'Toggle')
-call vundle#begin()
-Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'dracula/vim', { 'name': 'dracula' }
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'junegunn/fzf.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'sbdchd/neoformat'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-call vundle#end()
+call plug#begin('~/.vim/plugged')
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'VundleVim/Vundle.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'elixir-editors/vim-elixir'
+Plug 'flazz/vim-colorschemes'
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'sbdchd/neoformat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 
 autocmd BufWritePre * %s/\s\+$//e
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
