@@ -23,11 +23,13 @@ set smartindent
 set softtabstop=2
 set tabstop=2
 
-nnoremap <leader>f :FZF<CR>
+nnoremap <leader>f :GFiles<CR>
+nnoremap <leader>/ <Plug>NERDCommenterToggle
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
 nnoremap <silent> <space> :noh<CR>
 noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
-map <leader>/ <Plug>NERDCommenterToggle('n', 'Toggle')
 call plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'VundleVim/Vundle.vim'
@@ -40,6 +42,7 @@ Plug 'mileszs/ack.vim'
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -53,12 +56,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+
 autocmd BufWritePre * %s/\s\+$//e
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:NERDSpaceDelims = 1
+let g:rspec_command = "Dispatch bin/rspec {spec}"
 let g:dracula_italic = 0
 nmap \| :NERDTreeFind<CR>
 colorscheme dracula

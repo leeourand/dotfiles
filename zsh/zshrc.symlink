@@ -23,8 +23,22 @@ compinit
 for config_file ($ZSH/**/completion.sh) source $config_file
 
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 bindkey -e
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/lee.ourand/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
+# Terraform
+alias tf="terraform"
+
+export AWS_DEFAULT_REGION=us-east-2
+
+# Terraform
+alias tf="terraform"
+
+export AWS_DEFAULT_REGION=us-east-2
