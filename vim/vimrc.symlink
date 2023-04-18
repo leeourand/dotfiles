@@ -24,7 +24,7 @@ set softtabstop=2
 set tabstop=2
 
 nnoremap <leader>f :GFiles<CR>
-nnoremap <leader>/ <Plug>NERDCommenterToggle
+noremap <leader>/ <Plug>NERDCommenterToggle
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 nnoremap <silent> <space> :noh<CR>
@@ -32,8 +32,8 @@ noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
 call plug#begin('~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
 Plug 'VundleVim/Vundle.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'flazz/vim-colorschemes'
@@ -45,7 +45,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -56,6 +55,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
 
 lua << EOF
 require'lspconfig'.solargraph.setup{}
@@ -114,8 +114,8 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:NERDSpaceDelims = 1
-let g:rspec_command = "Dispatch bin/rspec {spec}"
+let g:rspec_command = "!bin/rspec {spec}"
 let g:dracula_italic = 0
 nmap \| :NERDTreeFind<CR>
-colorscheme dracula
+colorscheme Tomorrow
 au FileType gitcommit setlocal tw=72
