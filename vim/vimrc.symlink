@@ -32,6 +32,7 @@ nnoremap <silent> <space> :noh<CR>
 noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
 call plug#begin('~/.vim/plugged')
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'VundleVim/Vundle.vim'
@@ -118,5 +119,5 @@ let g:NERDSpaceDelims = 1
 let g:rspec_command = "!bin/rspec {spec}"
 let g:dracula_italic = 0
 nmap \| :NERDTreeFind<CR>
-colorscheme Tomorrow
+colorscheme catppuccin
 au FileType gitcommit setlocal tw=72
