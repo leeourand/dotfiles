@@ -13,7 +13,7 @@ else
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
 
-for pkg in nvim git nodenv node-build rbenv ruby-build tree heroku fzf watchman starship; do
+for pkg in nvim git colima docker nodenv node-build tmux rbenv ruby-build tree heroku fzf watchman starship; do
   if brew list -1 | grep -q "^${pkg}\$"; then
     echo "Package '$pkg' is installed; updating:"
     brew upgrade "$pkg" && brew cleanup "$pkg" || true

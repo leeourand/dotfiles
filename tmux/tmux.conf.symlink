@@ -17,9 +17,6 @@ set -g default-terminal "screen-256color"
 
 # Vim-ify
 set-window-option -g mode-keys vi
-# Setup 'v' to begin selection as in Vim
-bind-key vi-copy v begin-selection
-bind-key vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U

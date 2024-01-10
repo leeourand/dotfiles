@@ -1,6 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
-export EDITOR="/usr/local/bin/nvim"
+export EDITOR="/opt/homebrew/bin/nvim"
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Development
@@ -32,13 +32,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/lee.ourand/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
-
-# Terraform
-alias tf="terraform"
-
-export AWS_DEFAULT_REGION=us-east-2
-
-# Terraform
-alias tf="terraform"
-
-export AWS_DEFAULT_REGION=us-east-2
