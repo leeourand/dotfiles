@@ -25,6 +25,17 @@ bind l select-pane -R
 set -g @plugin 'catppuccin/tmux'
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @catppuccin_status_modules_right "directory date_time"
+set -g @catppuccin_window_default_fill "number"
+set -g @catppuccin_window_default_text "#W"
+
+set -g @catppuccin_window_current_fill "number"
+set -g @catppuccin_window_current_text "#W"
+
+set -g @catppuccin_window_left_separator ""
+set -g @catppuccin_window_right_separator " "
+set -g @catppuccin_window_middle_separator " █"
+set -g @catppuccin_window_number_position "right"
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
