@@ -28,6 +28,7 @@ nnoremap <leader>f :Files<CR>
 noremap <leader>/ <Plug>NERDCommenterToggle
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>u :UndotreeToggle<CR>
 nnoremap <silent> <space> :noh<CR>
 noremap <silent> <leader>c :let @+=expand("%")<CR>
 map \ :NERDTreeToggle<CR>
@@ -35,12 +36,12 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'VundleVim/Vundle.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'flazz/vim-colorschemes'
-Plug 'github/copilot.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'madox2/vim-ai'
+Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'pangloss/vim-javascript'
@@ -117,7 +118,7 @@ match ExtraWhitespace /\s\+$/
 let g:ackprg = 'ag --vimgrep --smart-case'
 let g:NERDSpaceDelims = 1
 let g:rspec_command = "!bin/rspec {spec}"
-let g:dracula_italic = 0
+let g:airline_theme='light'
 nmap \| :NERDTreeFind<CR>
-colorscheme catppuccin
+colorscheme catppuccin-latte
 au FileType gitcommit setlocal tw=72
