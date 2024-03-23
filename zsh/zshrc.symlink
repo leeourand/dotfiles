@@ -33,6 +33,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export OPENAI_API_KEY=$(/opt/homebrew/bin/bw get notes 'OpenAI Key')
+
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/lee.ourand/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
