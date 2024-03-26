@@ -1,13 +1,22 @@
 require('rose-pine').setup({
-	disable_background = true
+	variant = "auto", -- auto, main, moon, or dawn
+	dim_inactive_windows = false,
+	extend_background_behind_borders = true,
+	enable = {
+		terminal = true,
+	},
 })
 
-function ColorMyPencils(color)
-	color = color or "rose-pine"
-	vim.cmd.colorscheme(color)
+local auto_dark_mode = require('auto-dark-mode')
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-end
+auto_dark_mode.setup({
+	update_interval = 1000,
+	set_dark_mode = function()
+		vim.api.nvim_set_option('background', 'dark')
+	end,
+	set_light_mode = function()
+		vim.api.nvim_set_option('background', 'light')
+	end,
+})
 
-ColorMyPencils()
+vim.cmd("colorscheme rose-pine")

@@ -13,9 +13,6 @@ return require('packer').startup(function(use)
 	use {
 		'rose-pine/neovim',
 		as = 'rose-pine',
-		config = function()
-			vim.cmd('colorscheme rose-pine')
-		end
 	}
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -30,7 +27,7 @@ return require('packer').startup(function(use)
 	use 'mbbill/undotree'
 	use 'tpope/vim-fugitive'
 	use 'tpope/vim-surround'
-	use 'tpope/vim-git'
+	use 'nvim-treesitter/nvim-treesitter-context'
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
@@ -53,5 +50,7 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 		end
 	}
+
+	use 'f-person/auto-dark-mode.nvim'
 end)
 
