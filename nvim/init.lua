@@ -297,10 +297,19 @@ require('lazy').setup({
     config = function(_, opts)
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
-
     end,
   },
-
+  { 'nvim-treesitter/nvim-treesitter-context' },
+  {
+    'RRethy/nvim-treesitter-endwise',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        endwise = {
+          enable = true,
+        },
+      })
+    end,
+  },
   {
     'rose-pine/neovim',
     as = 'rose-pine',

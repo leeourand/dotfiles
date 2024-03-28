@@ -27,7 +27,9 @@ bind l select-pane -R
 set -g @plugin 'catppuccin/tmux'
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @catppuccin_flavour 'latte'
+set -g @plugin 'victorkristof/tmux-auto-dark-mode'
+set -g @adm-dark-status '~/.dotfiles/tmux/tmux.conf.dark'
+set -g @adm-light-status '~/.dotfiles/tmux/tmux.conf.light'
 set -g @catppuccin_status_modules_right "directory date_time"
 set -g @catppuccin_window_default_fill "number"
 set -g @catppuccin_window_default_text "#W"
