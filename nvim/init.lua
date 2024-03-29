@@ -32,6 +32,7 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '\\', ':Ex<CR>', { desc = 'Move focus to the upper window' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
@@ -311,12 +312,9 @@ require('lazy').setup({
     end,
   },
   {
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    priority = 1000,
-    init = function()
-      vim.cmd.colorscheme 'rose-pine'
-    end,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000 ,
   },
 
   {
@@ -373,3 +371,6 @@ require('lazy').setup({
     },
   },
 })
+
+vim.cmd.colorscheme "catppuccin"
+
