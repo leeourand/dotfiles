@@ -351,6 +351,7 @@ require('lazy').setup({
   { 'tpope/vim-fugitive' },
   { 'tpope/vim-surround' },
   { 'tpope/vim-rails' },
+  { 'tpope/vim-rhubarb' },
   { 'f-person/auto-dark-mode.nvim' },
 }, {
   ui = {

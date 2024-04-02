@@ -26,7 +26,7 @@ eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 bindkey -e
 
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^j^f "tmux-sessionizer\n"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
