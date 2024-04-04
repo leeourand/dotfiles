@@ -356,6 +356,13 @@ require('lazy').setup({
   { 'tpope/vim-rails' },
   { 'tpope/vim-rhubarb' },
   { 'f-person/auto-dark-mode.nvim' },
+  {
+    'echasnovski/mini.nvim',
+    version = false,
+    config = function()
+      require('mini.pairs').setup()
+    end,
+  },
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
