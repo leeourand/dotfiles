@@ -17,6 +17,8 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
+vim.opt.autowriteall = true
+vim.opt.swapfile = false
 
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -357,12 +359,19 @@ require('lazy').setup({
   { 'tpope/vim-rhubarb' },
   { 'f-person/auto-dark-mode.nvim' },
   {
-    'echasnovski/mini.nvim',
-    version = false,
+    'mbbill/undotree',
     config = function()
-      require('mini.pairs').setup()
-    end,
+      vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+    end
+
   },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equalent to setup({}) function
+  }
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
