@@ -6,3 +6,4 @@
 *.rbc
 
 .projections.json
+.editorconfig
